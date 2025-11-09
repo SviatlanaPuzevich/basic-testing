@@ -6,12 +6,9 @@ const validTestCases = [
   { a: 3, b: 2, action: Action.Multiply, expected: 6 },
   { a: 4, b: 4, action: Action.Divide, expected: 1 },
   { a: 5, b: 3, action: Action.Exponentiate, expected: 125 },
-];
-
-const invalidTestCases = [
-  { a: null, b: 2, action: Action.Add },
-  { a: 2, b: null, action: Action.Subtract },
-  { a: 3, b: 2, action: 'unknown' as Action },
+  { a: null, b: 2, action: Action.Add, expected: null },
+  { a: 2, b: null, action: Action.Subtract, expected: null },
+  { a: 3, b: 2, action: 'unknown' as Action, expected: null },
 ];
 
 describe('simpleCalculator', () => {
@@ -19,13 +16,6 @@ describe('simpleCalculator', () => {
     `should calculate correctly for %# (%s)`,
     ({ a, b, action, expected }) => {
       expect(simpleCalculator({ a, b, action })).toBe(expected);
-    },
-  );
-
-  test.each(invalidTestCases)(
-    'should return null for invalid arguments',
-    ({ a, b, action }) => {
-      expect(simpleCalculator({ a, b, action })).toBeNull();
     },
   );
 });
