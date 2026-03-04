@@ -1,107 +1,89 @@
 # Basic testing
-
-⚠️ DO NOT SUBMIT PULL REQUESTS TO THIS REPO ⚠️
-
----
-
-### Prerequisites
-1. Install [Node.js](https://nodejs.org/en/download/)   
-2. Fork this repository: https://github.com/AlreadyBored/basic-testing
-3. Clone your newly created repo locally: https://github.com/<%your_github_username%>/basic-testing/  
-4. Go to folder `basic-testing`  
-5. To install all dependencies use [`npm install`](https://docs.npmjs.com/cli/install)  
-6. Run **test scripts** in command line.
-7. You will see the number of skipped, passing and failing tests.
-
----
-
-### Test scripts
-
-```bash
-# run unit tests
-$ npm run test
-
-# with logging
-$ npm run test:verbose
-```
-
----
-
-#### Notes
-1. We recommend you to use Node.js of version 24.x.x (24.10.0 or upper) LTS. If you use any of features, that does not supported by Node.js 24, there may be problems with task submit.
-2. Please, be sure that each of your tests is limited to 30 sec.
-3. Please, be sure you don't have any linter/TS compiler errors.
-
----
-
-## General task description
-Your task is to write unit tests for code, provided in file `index.ts`. 
-
----
+1. Task: https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/basic-testing/assignment.md
+2. Done - 2025-11-09/ deadline 2025-11-10
+3. Score: 258/258
+ 
 
 ### **Simple tests**
 
-Write unit tests for the `simpleCalculator` function, which performs basic mathematical operations - addition, subtraction, division, multiplication, and exponentiation. Your task is to verify that the operations are executed correctly and that the function returns `null` for invalid input.
-
-Write your tests in `src/01-simple-tests/index.test.ts`.
+> * [x] should add two numbers
+> * [x] should subtract two numbers
+> * [x] should multiply two numbers
+> * [x] should divide two numbers
+> * [x] should exponentiate two numbers
+> * [x] should return null for invalid action
+> * [x] should return null for invalid arguments
 
 ---
 
 ### **Table tests**
 
-Your task is to rewrite the tests written in the previous task using the table-driven testing approach, utilizing the appropriate Jest API.
-
-Write your tests in `src/02-table-tests/index.test.ts`.
+> * [x] implemented
 
 ---
 
 
 ### **Error handling & async**
 
-Your task is to test functions that work asynchronously/throw/reject exceptions..
-
-Write your tests in `src/03-error-handling-async/index.test.ts`.
-
+> * [x] should resolve provided value
+> * [x] should throw error with provided message
+> * [x] should throw error with default message if message is not provided
+> * [x] should throw custom error
+> * [x] should reject custom error
 ---
 
 ### **Testing class**
 
-Your task is to test a class representing a bank account that implements corresponding operations. Please note that some methods of the class invoke others, some operations result in errors, and the implementation is asynchronous and involves the native JS API. These aspects should be taken into account when writing the tests.
-
-Write your tests in `src/04-test-class/index.test.ts`.
+> * [x] should create account with initial balance
+> * [x] should throw InsufficientFundsError error when withdrawing more than balance
+> * [x] should throw error when transferring more than balance
+> * [x] should throw error when transferring to the same account
+> * [x] should deposit money
+> * [x] should withdraw money
+> * [x] should transfer money
+> * [x] fetchBalance should return number in case if request did not failed
+> * [x] should set new balance if fetchBalance returned number
+> * [x] should throw SynchronizationFailedError if fetchBalance returned null
 
 ---
 
 ### **Partial mocking**
 
-Your task is to utilize the Jest API to partially mock the contents of a module.
-
-Write your tests in `src/05-partial-mocking/index.test.ts`.
+> * [x] mockOne, mockTwo, mockThree should not log into console
+> * [x] unmockedFunction should log into console
 
 ---
 
 ### **Mocking Node.js API**
 
-Your task is to test the proper usage of the Node.js API based on commonly used APIs such as the `fs` module, as well as `setTimeout` and `setInterval`. Remember that the tests should not interact with the actual file system and should not rely on real-time!
-
-Write your tests in `src/06-mocking-node-api/index.test.ts`.
+> * [x] should set timeout with provided callback and timeout
+> * [x] should call callback only after timeout
+> * [x] should set interval with provided callback and timeout
+> * [x] should call callback multiple times after multiple intervals
+> * [x] should call join with pathToFile
+> * [x] should return null if file does not exist
+> * [x] should return file content if file exists
 
 ---
 
 ### **Mocking library API**
 
-Your task is to test that function that utilize library APIs is working correctly (with commonly used libraries such as `axios` and `lodash` as examples).
-
-Write your tests in `src/07-mocking-lib-api/index.test.ts`.
+> * [x] should create instance with provided base url
+> * [x] should perform request to correct provided url
+> * [x] should return response data
 
 ---
 
 ### **Snapshot testing**
 
-Your task is to use snapshot testing with Jest and compare it to regular comparison testing.
-
-Write your tests in `src/08-snapshot-testing/index.test.ts`.
+> * [x] should generate linked list from values 1
+> * [x] should generate linked list from values 2
 
 ---
 
-© [AlreadyBored](https://github.com/AlreadyBored)
+## Forfeits
+
+- **-5** for each linter warning
+- **-10** for each linter/TS compiler error
+- **-30% of total task score** Commits after deadline (except commits that affect only Readme.md, .gitignore, etc.)
+---
